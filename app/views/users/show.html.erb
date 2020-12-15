@@ -1,0 +1,6 @@
+<h1>매일매일의 롤 기록</h1>
+<br>
+<p>by<%= current_user.nickname %>님</p>
+<% @items.each do |item| %>
+<p><%= item.name %> : <%= item.price %><%= item.user.nickname.present? ? "by #{item.user.nickname}" : "会員NO。#{item.user.id}" %></p>
+<% end %>

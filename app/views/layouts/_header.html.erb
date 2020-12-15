@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+      <%= "#{current_user.email}様,ようこそ!" %>
+      <%= link_to "一覧ページ", root_path %>     
+      <%= link_to "新規投稿ページ", new_post_path %>
+            <!-- ログイン時 -->      
+      <%= link_to "アカウント編集", edit_user_registration_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {confirm: "ログアウトしますか？"} %>
+    <% else %>
+      <!-- 非ログイン時 -->  
+      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to "アカウント登録", new_user_registration_path %>
+    <% end %>    

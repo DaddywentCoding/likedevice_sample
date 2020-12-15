@@ -1,0 +1,10 @@
+<h1>롤 메모장</h1>
+<% if user_signed_in? %>
+  <% @items.each do |item| %>
+    <p><%= item.name %> : <%= item.price %><%= item.user.nickname.present? ? " by #{item.user.nickname}" : " 会員NO。#{item.user.id}" %></p>
+  <% end %> 
+<% else %>
+  <P>ログインしてください</P>
+<% end %>
+
+
